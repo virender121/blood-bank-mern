@@ -1,0 +1,48 @@
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .hover-text {
+    margin-right: 5px; /* Adjust the spacing between text and icon */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border: none;
+    background-color: darkgray;
+    width: auto;
+    color: white;
+    border-radius: 6px;
+    padding: auto;
+  }
+  
+  .icon-wrapper:hover .hover-text {
+    opacity: 1;
+  }
+  
+.action-buttons-wrapper{
+    overflow-y: auto;
+    max-height: 200px;
+}
+.action-buttons {
+    display: flex;
+    justify-content: flex-end; /* Align icons to the right side */
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .icon {
+    margin-bottom: 10px;
+    color: white;
+    background-color: rgba(219, 19, 58, 255);
+    width: 2rem;
+    height: 2rem;
+    padding: 10px;
+    border: 1px solid rgba(219, 19, 58, 255);
+    border-radius: 50%;
+  }
+  
+  
