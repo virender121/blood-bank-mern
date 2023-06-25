@@ -1,21 +1,34 @@
 import React from 'react'
 import './Form.css'
-const InputType = ({  labelText, labelFor , inputType, value, onChange, name}) => {
-  return (
-   <>
-   <div className="mb-1 input">
-   <label htmlFor={labelFor} className="form-label ">
-    {labelText}
-    </label>
-    <input type={inputType}
-    className='form-control'
-    name={name}
-    onChange={onChange}
-    value= {value}
-    />
-   </div>
-   </>
-  )
-}
+const InputType = ({ labelText, labelFor, inputType, name, value, onChange, className }) => {
+  if (inputType === 'textarea') {
+    return (
+      <div>
+        <label htmlFor={labelFor} className="form-label">{labelText}</label>
+        <textarea
+          id={labelFor}
+          name={name}
+          value={value}
+          onChange={onChange}
+          className={className}
+        />
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <label htmlFor={labelFor} className="form-label">{labelText}</label>
+        <input
+          type={inputType}
+          id={labelFor}
+          name={name}
+          value={value}
+          onChange={onChange}
+          className={className || "form-control"}
+        />
+      </div>
+    );
+  }
+};
 
-export default InputType
+export default InputType;

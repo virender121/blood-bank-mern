@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header/Header';
-import headerback from '../../Images/homeback.jpg';
+import headerback from '../../Images/HomePIC.jpg';
 import Footer from '../../components/Footer/Footer';
 import Testimonial from '../../components/Testimonial/Testimonial';
 import ActionButtons from '../../components/shared/ActionButtons/ActionButtons';
+import  NumberCounter  from "number-counter";
 import './Home.css';
+import FaqSection from '../../components/FAQ/FaqSection';
+import Form from '../../components/shared/Form/Form';
+import MapContainer from '../../components/MapContainer/MapContainer';
 
 const Home = () => {
   const [containerOffset, setContainerOffset] = useState(0);
@@ -27,7 +31,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <Header backgroundImage={headerback} text="Welcome to my site" />
+      <Header backgroundImage={headerback} heading ="Give Blood" text="When you give a pint, you give more than just blood." />
       <div className='conatiner'>
         <div className='row'>
           <div className="col-md-10 p-5">
@@ -36,6 +40,46 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div className="figures">
+        <div className='figure-content'>
+          <div  className='firstfigure'>
+            <span className='figure'>
+              <NumberCounter end={350} start={1} delay="4" preFix="+" />
+            </span>
+            <span className='figure-text'>Units of blood are needed every day in the 12<br/> counties served by Our Blood<br/> Center.</span>
+          </div>
+          <div className='firstfigure'>
+            <span className='figure'>
+              <NumberCounter end={43000} start={12220} delay="4" preFix="+" />
+            </span>
+            <span  className='figure-text'>Units of blood are used each day in the<br/> India.</span>
+          </div>
+          <div className='firstfigure'>
+            <span className='figure'>
+              <NumberCounter end={33} start={10} delay="4" preFix="+" />
+            </span>
+            <span  className='figure-text'>Our Blood Center is the only blood<br/> supplier to 33 hospitals in our region. No other<br/> blood organization supplies these hospitals.</span>
+          </div>
+        </div>
+        </div>
+        <FaqSection/>
+        <div className="container " >
+          <div className='col-md-12'>
+            <h3 className='contact-heading'>contact us</h3>
+          </div>
+          <div className='row' style={{ display: "flex",flexDirection: "row" }}>
+  <div className="map-container" style={{ flex: "1" }}>
+    {/* Add your map component or content here */}
+    <MapContainer/>
+    </div>
+  <div className="form-home-container" style={{ flex: "1" }}>
+    
+    <Form  formType="contact" submitBtn="Contact" />
+  </div>
+</div>
+</div>
+
+
       <Testimonial />
       <div className="action-buttons-container" style={{ top: `${containerOffset}px` }}>
         <div className="action-buttons-inner">

@@ -27,5 +27,57 @@
     padding-right: 20px; /* Adjust the padding as needed */
     margin-top: 40rem;
   }
+  .figures {
+    background-image: url('../../Images/bg-counters.jpg');
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 400px;
+    /* display: flex; */
+   align-items: center;
+   justify-content: center;
+  }
   
+  .figure-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
   
+  }
+  .firstfigure{
+   display: flex;
+   flex-direction: column;
+   margin-top: 8rem;
+  }
+  .figure-text{
+    color: white;
+    font-size: 1.1rem;
+  }
+  .figure{
+    color: white;
+    font-size: 3rem;
+  }
+ 
+  @media (max-width: 768px) {
+    .figure-content {
+      flex-direction: column;
+    }
+  
+    .firstfigure {
+      margin-top: 4rem;
+    }
+  }
+
+ .form-home-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  width: auto;
+ }
+  
+ .contact-heading{
+  font-size: 2.5rem;
+  font-weight: 500;
+ }

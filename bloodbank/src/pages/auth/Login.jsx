@@ -19,7 +19,7 @@ const Login = () => {
           </div>
           <div className='col-md-6 d-flex align-items-center justify-content-center'>
             <div className='form-container'>
-              <Form formTiltle={'Login Page'} buttonTitle={'Log In'} formType={'login'} />
+              <Form formTitle={'Welcome Back!! '} submitBtn={'Log In'} formType={'login'} />
             </div>
           </div>
         </div>

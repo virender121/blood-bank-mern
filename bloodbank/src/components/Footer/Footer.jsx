@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        &copy; Food and Burps 2020.
+        &copy;DigitalShakha
       </div>
     </div>
   );

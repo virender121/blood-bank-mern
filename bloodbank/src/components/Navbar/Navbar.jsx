@@ -11,6 +11,7 @@ const Navbar = () => {
   };
 
   return (
+    <>
     <nav>
       <Link to='/' className="logo-link">
         <img src={logo} alt="Logo" className="logo-image" />
@@ -19,7 +20,7 @@ const Navbar = () => {
         <Link to='/'>Home</Link>
         <Link to='/about'>About</Link>
         <Link to='/event'>Events</Link>
-        <Link to='/contact'>Contact Us</Link>
+        <Link to='/contactus'>Contact Us</Link>
         <Link to='/signin'>SignIn</Link>
       </div>
       <div className="hamburger" onClick={handleMenuToggle}>
@@ -28,6 +29,16 @@ const Navbar = () => {
         <div className={`line ${showMenu ? 'line-3' : ''}`}></div>
       </div>
     </nav>
+    <nav className='second-nav'>
+      <hr/>
+    <div className={`nav-links ${showMenu ? 'show' : ''}`}>
+        <Link to='/'>HOST A BLOOD DRIVE</Link>
+        <Link to='/about'>FIND A BLOOD DRIVE</Link>
+        <Link to='/event'>BECOME DONOR</Link>
+        
+      </div>
+    </nav>
+    </>
   );
 }
 

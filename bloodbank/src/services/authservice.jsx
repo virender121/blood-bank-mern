@@ -34,3 +34,20 @@ export const handleRegister = (
         console.log(error);
     }
   };
+
+
+//   export const handleContact=(
+//     e,
+//     name,
+//     email,
+//     phone,
+//     message
+//   ) =>{
+//     e.preventDefault();
+//     try{
+//         store.dispatch(contact({name,email,phone,message}))
+//     } 
+//     catch(error){
+//         console.log(error)
+//     }
+//   }

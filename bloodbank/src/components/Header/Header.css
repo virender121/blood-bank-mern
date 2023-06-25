@@ -9,14 +9,31 @@
   .header-text {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 20%;
     transform: translate(-50%, -50%);
-    text-align: center;
+    text-align: start;
   }
-  
+  @media screen and(max-width:768px) {
+    .header-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: start;
+    }
+  }
   .header-text h1 {
     color: #fff;
-    font-size: 32px; /* Adjust the font size as needed */
+    font-size: 32px; 
     font-weight: bold;
+    display: flex;
+    align-items: start;
+    padding-bottom: none;
+  }
+  .header-text p {
+    color: #fff;
+    font-size: 1.1rem;
+    padding-top: none;
+   
   }
   

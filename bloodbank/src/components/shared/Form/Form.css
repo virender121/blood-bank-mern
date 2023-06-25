@@ -17,6 +17,26 @@
     display: flex;
     flex-direction: row;
 }
+.contact-input {
+    width: 100%;
+    height: 1.5rem;
+    border: none;
+    border-bottom: 1px solid black;
+   
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    /* Add more styles as needed */
+  }
+  .contact-textarea{
+    width: 100%;
+    height: 4.5rem;
+    border: none;
+    border-bottom: 1px solid black;
+   
+    padding: 0.5rem;
+    margin-bottom: 4rem;
+  }
+  
 
 a{
     text-decoration: none;
