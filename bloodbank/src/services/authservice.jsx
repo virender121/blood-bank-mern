@@ -51,3 +51,10 @@ export const handleRegister = (
 //         console.log(error)
 //     }
 //   }
+
+export const showAdditionalFeild =()=>{
+  // if(showAdditionalFeild===true){
+  //   return 
+  // } else{
+  //   return ''
+  }

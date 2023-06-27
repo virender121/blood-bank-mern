@@ -8,3 +8,37 @@
     border-radius: '8px';
     box-shadow: '0 0 10px rgba(0, 0, 0, 0.1)';
 }
+.contents{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.register-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32rem;
+    padding: 20px;
+    background-color: rgba(14, 10, 10, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 5rem;
+    color: white;
+    
+
+}
+.login-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media (max-width:767px){
+    .login-container{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+    }
+}

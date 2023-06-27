@@ -29,15 +29,7 @@ const Navbar = () => {
         <div className={`line ${showMenu ? 'line-3' : ''}`}></div>
       </div>
     </nav>
-    <nav className='second-nav'>
-      <hr/>
-    <div className={`nav-links ${showMenu ? 'show' : ''}`}>
-        <Link to='/'>HOST A BLOOD DRIVE</Link>
-        <Link to='/about'>FIND A BLOOD DRIVE</Link>
-        <Link to='/event'>BECOME DONOR</Link>
-        
-      </div>
-    </nav>
+  
     </>
   );
 }

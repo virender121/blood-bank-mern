@@ -7,17 +7,7 @@ nav {
     color: #fff;
     
   }
-  .second-nav {
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    color: rgba(219, 19, 58, 255);
-    background-color: #fff;
-    z-index: 999;
-  }
+ 
   
  .second-nav .nav-links a {
   display: flex;

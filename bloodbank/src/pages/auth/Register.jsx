@@ -15,26 +15,22 @@ const Register = () => {
       ) : (
         <div className="row g-0">
           <div
-            className="col-md-8 form-banner"
+            className="col-md-8 form-banner "
             style={{
-              backgroundImage: `url(${banner2})`,
+              backgroundImage: `linear-gradient(rgba(219, 19, 58, 0.5), rgb(180,180,180)), url(${banner2})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
+              // backgroundColor: 'rgba(219, 19, 58, 0.5)', 
             }}
+            
           >
+            <div className='contents'>
             <div
-              className="form-container registerform"
-              style={{
-                margin: 'auto',
-                
-                maxWidth: '800px',
-                padding: '20px',
-                backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                borderRadius: '8px',
-                boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-              }}
+              className=" "
+             
             >
-              <div className= 'container mt-5'>
+              </div>
+              <div className= 'register-form'>
               <Form formTitle={'Register'} submitBtn={'Register'} formType={'register'} />
               </div>
             </div>

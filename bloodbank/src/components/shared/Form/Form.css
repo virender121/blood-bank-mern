@@ -52,3 +52,10 @@ a{
     color: white;
     font-size: 1.1rem;
 }
+
+.form-title{
+   font-size: 1.7rem;
+   font-style: unset;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   color: rgba(219, 19, 58, 255);
+}

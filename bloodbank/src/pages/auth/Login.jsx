@@ -13,7 +13,7 @@ const Login = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className='row' style={{ display: 'flex', alignItems: 'center' }}>
+        <div className='row login-container' >
           <div className='col-md-6' style={{ flex: 1 }}>
             <img src={loginBack} alt='loginImage' className="loginImage" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>

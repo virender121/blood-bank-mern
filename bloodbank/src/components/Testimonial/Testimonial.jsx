@@ -15,7 +15,7 @@ const Testimonial =() =>{
               <img src={famous} alt="Someone Famous"/>
             </div>
             <div className="details">
-              <h2>Someone Famous<br/><span>Website Developer</span></h2>
+              <h2>Someone Famous<br/><span>Football player</span></h2>
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@ const Testimonial =() =>{
               <img src="" alt="Someone Famous"/>
             </div>
             <div className="details">
-              <h2>Someone Famous<br/><span>Website Developer</span></h2>
+              <h2>Someone Famous<br/><span>Politician</span></h2>
             </div>
           </div>
         </div>

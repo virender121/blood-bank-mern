@@ -20,10 +20,10 @@ const FAQSection = () => {
           How long does it take?
           </a>
           <div className={`content ${activeIndex === 0 ? 'active' : ''}`}>
-           <ul>
-            <li>Blood donations take 30-45 minutes and can be done every eight weeks.</li>
-            <li>Platelet donations take 70-90 minutes and donors can give every seven days.</li>
-            </ul>
+           
+            <p>Blood donations take 30-45 minutes and can be done every eight weeks.</p>
+            <p>Platelet donations take 70-90 minutes and donors can give every seven days.</p>
+            
           </div>
         </div>
         <div className="accordion-item">

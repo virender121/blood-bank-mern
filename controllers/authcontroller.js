@@ -1,5 +1,6 @@
 const userModels = require("../models/userModels");
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 const registerController = async(req, res) => {
    try{
        const existingUser = await userModels.findOne({email:req.body.email})
@@ -12,21 +13,21 @@ const registerController = async(req, res) => {
        }
        const salt = await bcrypt.genSalt(10)
 
-       const hashedPassword = await bcrypt.hash(req.body.password, salt , (error)=>console.log(error));
+       const hashedPassword = await bcrypt.hash(req.body.password, salt );
 
        req.body.password = hashedPassword
 
        console.log(req.body)
     //    rest data
-    // const user = new userModels(req.body)
-    // // const user= {...req.body}
-    // await user.save()
-    const user = await userModels.create(req.body);
+    const user = new userModels(req.body)
+     console.log(user)
+    await user.save()
+   
 
     return res.status(201).send({
         success: true,
         message: "User Registered Successfully",
-        data: user
+        user,
     })
    } catch(error){
     console.log(error)
@@ -38,4 +39,58 @@ const registerController = async(req, res) => {
    }
 }
 
-module.exports = { registerController}
+// Login callback
+
+const loginController = async(req, res) => {
+    try{
+         const user = await userModels.findOne({email:req.body.email})
+         if(!user){
+            return res.status(404).send({
+                success:false,
+                message: "Invalid Credentials"
+            })
+         }
+        //  Compare Password
+        const comparePassword = await bcrypt.compare(req.body.password, user.password)
+        if(!comparePassword){
+            return res.status(500).send({
+                success:false,
+                message: "Invalid Credentials"
+            })
+        }
+        const token = jwt.sign({userId:user._id},process.env.JWT_SECRET, {expiresIn: '1d'})
+        return res.status(200).send({
+            success:true,
+            message:'Login Successful',
+            token,
+            user,
+        })
+    } catch(error){
+         console.log(error)
+         res.status(500).send({
+            success:false,
+            message:"Error In Login API",
+            error
+         })
+    }
+}
+
+// Get Current user
+const currentUserController = async(req,res) => {
+    try{
+       const user = await userModels.findOne({_id:req.body.userId})
+       return res.status(200).send({
+        success:true,
+        message:"User Fetched Successfully",
+        user,
+       })
+    } catch(error){
+        console.log(error)
+        res.status(500).send({
+            success: false,
+            message :'Unable to get current user'
+        })
+    }
+};
+
+module.exports = { registerController, loginController, currentUserController}

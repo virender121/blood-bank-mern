@@ -13,19 +13,19 @@ const Footer = () => {
           <h3>Quick Links</h3>
           <div className="border1"></div>
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="#">Search</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="/contactus">Contact</a></li>
+            <li><a href="/about">About</a></li>
           </ul>
         </div>
         <div className="footer-items">
           <h3>Recipes</h3>
           <div className="border1"></div>
           <ul>
-            <li><a href="#">Indian</a></li>
-            <li><a href="#">Chinese</a></li>
-            <li><a href="#">Mexican</a></li>
+            <li><a href="#">Become donor</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#"></a></li>
             <li><a href="#">Italian</a></li>
           </ul>
         </div>

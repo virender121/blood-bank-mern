@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import InputType from './InputType';
 import { Link } from 'react-router-dom';
-import { handleLogin, handleRegister, handleContact } from '../../../services/authservice';
+import { handleLogin, handleRegister, handleContact ,showAdditionalFeild} from '../../../services/authservice';
 
 const Form = ({ formType, submitBtn, formTitle }) => {
   const [email, setEmail] = useState('');
@@ -14,6 +14,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
   const [address, setAddress] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
+  const [streetAddress, setStreetAddress] = useState("");
 
   return (
     <div>
@@ -37,12 +38,12 @@ const Form = ({ formType, submitBtn, formTitle }) => {
           //   return handleContact(e, name, email, phone, message);
         }}
       >
-        <div className="text-center">{formTitle}</div>
-        {formType !== 'contact' && <hr />}
+        <div className="text-center form-title">{formTitle}</div>
+        {/* {formType !== 'contact' && <hr />}
         {formType !== 'contact' ? (
   <div className="d-flex mb-3 form-check-class">
     <div className="form-check">
-      <input
+      {/* <input
         type="radio"
         className="form-check-input"
         name="role"
@@ -50,12 +51,12 @@ const Form = ({ formType, submitBtn, formTitle }) => {
         value="donor"
         onChange={(e) => setRole(e.target.value)}
         defaultChecked
-      />
-      <label htmlFor="donorRadio" className="form-check-label">
+      /> */}
+      {/* <label htmlFor="donorRadio" className="form-check-label">
         Donor
       </label>
-    </div>
-    <div className="form-check ms-2">
+    </div> */}
+    {/* <div className="form-check ms-2">
       <input
         type="radio"
         className="form-check-input"
@@ -94,8 +95,8 @@ const Form = ({ formType, submitBtn, formTitle }) => {
         Organisation
       </label>
     </div>
-  </div>
-) : null}
+  </div> */}
+{/* ) : null} */} 
 
         {/* switch statement */}
         {(() => {
@@ -209,7 +210,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                     name="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className='contact-input'
+                    className='contact-input '
                   />
                   <InputType
                     labelText="Email"
@@ -219,7 +220,6 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className='contact-input'
-                    
                   />
                   <InputType
                     labelText="Phone"
@@ -230,21 +230,43 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                     onChange={(e) => setPhone(e.target.value)}
                     className='contact-input'
                   />
+            
+                  {showAdditionalFeild===true ? (
+                    <>
+                      <InputType
+                        labelText="Address"
+                        labelFor="forAddress"
+                        inputType="text"
+                        name="address"
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                      />
+                      <InputType
+                        labelText="Street Address"
+                        labelFor="forStreetAddress"
+                        inputType="text"
+                        name="streetAddress"
+                        value={streetAddress}
+                        onChange={(e) => setStreetAddress(e.target.value)}
+                      />
+                    </>
+                  ) : null}
+            
                   <InputType
-  labelText="Message"
-  labelFor="forMessage"
-  inputType="textarea"
-  name="message"
-  value={message}
-  onChange={(e) => setMessage(e.target.value)}
-  className="contact-textarea"
-  rows={4}
-  cols={50}
-/>
-
+                    labelText="Message"
+                    labelFor="forMessage"
+                    inputType="textarea"
+                    name="message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="contact-textarea"
+                    rows={4}
+                    cols={50}
+                  />
                 </>
               );
             }
+            
             default: {
               return null;
             }
@@ -267,7 +289,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
           )}
           </div>
           ): null}
-          <button className="btn" type="submit">
+          <button className='btn' type="submit">
             {submitBtn}
           </button>
         </div>

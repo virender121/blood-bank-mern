@@ -1,0 +1,58 @@
+
+    .seprater{
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      
+    }
+
+    hr{
+       
+       font-size: larger;
+       border: .2rem solid black;
+    }
+
+    .bord-list{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .items{
+        flex-basis: 33.33%;
+    }
+    @media (max-width:767px){
+        .bord-list {
+           display: "flex";
+           flex-direction: column;
+        }
+    }
+
+    .director-name{
+        font-size: 2rem;
+        /* font-style: italic; */
+        font-family: cursive;
+        display: flex;
+        justify-content: end;
+    }
+
+    .director-pic{
+        width: 25rem;
+    }
+    .director-text{
+        font-size: 1.7rem;
+        margin-top: 10rem;
+    }
+    .member-heading{
+        font-size: 1rem;
+    }
+    .member{
+        font-size: 1rem;
+        margin: 0;
+    }
+    .member-name{
+        margin-top: 0;
+    }
+    
+   
+      
+   

@@ -35,7 +35,7 @@ const Home = () => {
       <div className='conatiner'>
         <div className='row'>
           <div className="col-md-10 p-5">
-            <h2 className='about-head'>About Us</h2>
+            <h2 className='about-head' >About Us</h2>
             <p className='about-text'>The Blood Center of Northcentral Wisconsin is a community blood center providing life-saving blood products to hospitals and patients in six counties of Wisconsin. We are licensed by the Food and Drug Administration (FDA), accredited by the AABB (formerly known as the American Association of Blood Banks), and are members of America's Blood Centers (ABC), Blood Centers of America (BCA), and the Wisconsin Association of Blood Banks (WABB). The center, originally named the Marathon County Blood Bank, was established through the combined efforts of the Wausau Junior Chamber of Commerce (Jaycees), Marathon County Medical Society, and over 25 clubs, civic, and county organizations. The center opened for blood donations on Thursday, April 3rd, 1952. The center was renamed Blood Center of Northcentral Wisconsin when it moved to its current location in 2003. Our service area includes hospitals in the cities of Wausau, Wisconsin Rapids, Medford, Antigo, Stevens Point, and Portage.</p>
           </div>
         </div>
@@ -67,14 +67,14 @@ const Home = () => {
           <div className='col-md-12'>
             <h3 className='contact-heading'>contact us</h3>
           </div>
-          <div className='row' style={{ display: "flex",flexDirection: "row" }}>
-  <div className="map-container" style={{ flex: "1" }}>
-    {/* Add your map component or content here */}
+          <div className=' contact-info' >
+  <div className="map-container" style={{ flex: "1"}}>
+  
     <MapContainer/>
     </div>
   <div className="form-home-container" style={{ flex: "1" }}>
     
-    <Form  formType="contact" submitBtn="Contact" />
+    <Form  formType="contact" submitBtn="Contact" showAdditionalFeild={false}/>
   </div>
 </div>
 </div>
