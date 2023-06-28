@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const registerController = async(req, res) => {
    try{
+    console.log(req.body)
        const existingUser = await userModels.findOne({email:req.body.email})
 
        if(existingUser){
@@ -20,6 +21,19 @@ const registerController = async(req, res) => {
        console.log(req.body)
     //    rest data
     const user = new userModels(req.body)
+
+    // const validationError = user.validateSync();
+    // if(validationError){
+    //     const errors = Object.keys(validationError.errors).map((key)=>({
+    //         field:key,
+    //         message: validationError.errors[key].message
+    //     }));
+    //     return res.status(400).send({
+    //         success: false,
+    //         message: "Validation Error",
+    //         errors: errors,
+    //       });
+    // }
      console.log(user)
     await user.save()
    

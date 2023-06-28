@@ -9,11 +9,15 @@ import Contactus from './pages/Contact/Contactus';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
     <div className="App">
      <Navbar/>
+     <ToastContainer/>
      <Routes>
        <Route exact path="/" element={<Home/>}/>
        <Route  path="/about" element={<About/>}/>

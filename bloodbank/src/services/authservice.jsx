@@ -1,13 +1,13 @@
 import { userLogin, userRegister } from "../Reduxe/auth/authAction";
 import store from "../Reduxe/store";
 
-export const handleLogin = (e, email, password, role) =>{
+export const handleLogin = (e, email, password) =>{
     e.preventDefault()
     try{
-        if(!role || !email || !password){
+        if( !email || !password){
             return alert("Please provide all feilds")
         }
-        store.dispatch(userLogin({email, password, role}));
+        store.dispatch(userLogin({email, password}));
     }
     catch(error){
       console.log(error);
@@ -17,18 +17,16 @@ export const handleLogin = (e, email, password, role) =>{
 export const handleRegister = (
     e,
     name,
-    role,
     email,
     password,
     phone,
-    organisationName,
     address,
-    hospitalName,
+    
    
   ) => {
     e.preventDefault();
     try{
-        store.dispatch(userRegister({name, role, email, password,phone, organisationName,address, hospitalName}))
+        store.dispatch(userRegister({name,  email, password,phone ,address}))
     }
     catch(error){
         console.log(error);

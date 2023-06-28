@@ -36,14 +36,20 @@
     }
 
     .director-pic{
-        width: 25rem;
+        width: 23rem;
+        border-radius: 10px;
     }
     .director-text{
         font-size: 1.7rem;
         margin-top: 10rem;
     }
+    .mission-text{
+        font-size: 1.6rem;
+    }
     .member-heading{
-        font-size: 1rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: darkslategray;
     }
     .member{
         font-size: 1rem;
@@ -53,6 +59,42 @@
         margin-top: 0;
     }
     
+   .icons{
+    display: flex;
+    justify-content: space-around;
+    
+   }
+   .about-header{
+    font-size: 2.3rem;
+    font-family: 'Courier New', Courier, monospace;
+   }
+   .abouticon{
+   font-size: 2rem;
+    background-color: transparent;
+   }
+    
+   .leaders{
+    font-size: 3rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   }
+   .leadership{
+    color: rgba(219, 19, 58, 255);
+}
+   @media (max-width:767px){
+    .bord-list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .items{
+        display: flex;
+        flex-direction: column;
+       
+    }
    
-      
+    .director-text{
+        text-align: center;
+    }
+   }
    

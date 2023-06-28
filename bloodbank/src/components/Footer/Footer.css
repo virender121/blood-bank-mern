@@ -76,8 +76,10 @@ li i {
 .social-media {
 	width: 100%;
 	color: #fff;
+	display: flex;
+	justify-content: space-around;
 	text-align: center;
-	font-size: 20px;
+	font-size: 2rem;
 }
 
 .social-media a {
@@ -91,6 +93,10 @@ li i {
 	padding: 4px;
 	color: #fff;
 	transition: 0.5s;
+}
+.footer-icon{
+	font-size: 2rem;
+	color: #fff;
 }
 
 .social-media i:hover {

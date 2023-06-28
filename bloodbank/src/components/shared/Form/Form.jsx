@@ -6,10 +6,10 @@ import { handleLogin, handleRegister, handleContact ,showAdditionalFeild} from '
 const Form = ({ formType, submitBtn, formTitle }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('donar');
+  // const [role, setRole] = useState('donar');
   const [name, setName] = useState('');
-  const [organisationName, setOrganisationName] = useState('');
-  const [hospitalName, setHospitalName] = useState('');
+  // const [organisationName, setOrganisationName] = useState('');
+  // const [hospitalName, setHospitalName] = useState('');
   const [website, setWebsite] = useState('');
   const [address, setAddress] = useState('');
   const [phone, setPhone] = useState('');
@@ -21,18 +21,15 @@ const Form = ({ formType, submitBtn, formTitle }) => {
       <form
         onSubmit={(e) => {
           if (formType === 'login')
-            return handleLogin(e, email, password, role);
+            return handleLogin(e, email, password);
           else if (formType === 'register')
             return handleRegister(
               e,
               name,
-              role,
               email,
               password,
               phone,
-              organisationName,
               address,
-              hospitalName
             );
           // else if (formType === 'contact')
           //   return handleContact(e, name, email, phone, message);
@@ -126,7 +123,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
             case formType === 'register': {
               return (
                 <>
-                  {(role === 'admin' || role === 'donar') && (
+                  
                     <InputType
                       labelText="Name"
                       labelFor="forName"
@@ -135,27 +132,9 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                     />
-                  )}
-                  {role === 'organisation' && (
-                    <InputType
-                      labelText="Organisation Name"
-                      labelFor="forOrganisationName"
-                      inputType="text"
-                      name="organisationName"
-                      value={organisationName}
-                      onChange={(e) => setOrganisationName(e.target.value)}
-                    />
-                  )}
-                  {role === 'hospital' && (
-                    <InputType
-                      labelText="Hospital Name"
-                      labelFor="forHospitalName"
-                      inputType="text"
-                      name="hospitalName"
-                      value={hospitalName}
-                      onChange={(e) => setHospitalName(e.target.value)}
-                    />
-                  )}
+                  
+                
+                
 
                   <InputType
                     labelText="Email"
@@ -192,7 +171,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                   <InputType
                     labelText="Phone"
                     labelFor="forPhone"
-                    inputType="text"
+                    inputType="Number"
                     name="phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
