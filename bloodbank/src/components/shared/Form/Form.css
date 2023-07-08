@@ -43,16 +43,18 @@ a{
     color: rgba(219, 19, 58, 255);
 }
 
-.btn{
-    width: 90%;
-    height: 2.2rem;
+.btn-main{
+    width: 8rem;
     border: none;
     background-color: rgba(219,19,58,255);
     border-radius: 7px;
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
-
+.btn-div{
+   
+    justify-content: center;
+}
 .form-title{
    font-size: 1.7rem;
    font-style: unset;

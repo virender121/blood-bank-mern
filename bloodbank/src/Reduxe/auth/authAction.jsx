@@ -92,3 +92,38 @@ export const getCurrentUser = createAsyncThunk(
     }
   }
 );
+
+
+
+export const donor = createAsyncThunk(
+  'auth/donor',
+  async (formData, { rejectWithValue, getState }) => {
+    try {
+      const { auth } = getState();
+
+      if (!auth.isAuthenticated) {
+        // User is not logged in
+        toast.error('Please log in to fill the donor form');
+        return;
+      }
+
+      const response = await API.post("/auth/donor", formData);
+      const data = response.data;
+
+      if (data.success) {
+        toast.success(data.message);
+        // Handle success action or redirect to another page
+      }
+
+      return data;
+    } catch (error) {
+      console.log(error);
+
+      if (error.response && error.response.data.message) {
+        return rejectWithValue(error.response.data.message);
+      } else {
+        return rejectWithValue(error.message);
+      }
+    }
+  }
+);

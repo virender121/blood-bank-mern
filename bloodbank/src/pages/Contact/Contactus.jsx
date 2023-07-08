@@ -15,7 +15,7 @@ const Contactus = () => {
   <div className="row">
     <div className="map-container ">
       {/* Add your map component or content here */}
-      <MapContainer />
+      {/* <MapContainer /> */}
     </div>
     <div className="form-home-container ">
       <h2  className='contact-heading'>How can we help?</h2>

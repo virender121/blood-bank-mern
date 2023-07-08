@@ -4,7 +4,7 @@
    background-color: lightgray;
   }
   .qusetion-header{
-    font-size: 2.75rem;
+    font-size: 2.3rem;
     font-style:italic;
     color: #373d51;
     padding: 1.3rem;
@@ -26,7 +26,7 @@
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
     padding: 1rem 3rem 1rem 1rem;
     color: #333;
     font-size: 1.35rem;
@@ -40,6 +40,7 @@
     color: #ff5353;
   }
   .accordion a:hover::after {
+    
     border: 1px solid #ff5353;
   }
   .accordion a.active {
@@ -83,24 +84,26 @@
     border-radius: 50%;
     border: 1px solid #7288a2;
     text-align: center;
+    
     content: '+';
     transition: background-color 0.3s, color 0.3s;
-    line-height: 30px; /* Vertically center the content */
+    line-height: 16px;
   }
   
   .accordion a.active::after {
     font-size: 1.8rem;
     font-family: 'Ionicons';
+    
     content: '-';
   }
   
   .accordion a.active:hover::after {
-    background-color: #7288a2;
+    background-color: rgba(219,19,58,255);
     color: #fff;
   }
   
   .accordion a:hover::after {
-    background-color: #7288a2;
+    background-color:  rgba(219,19,58,255);
     color: #fff;
   }
   .accordion .content {
@@ -129,4 +132,5 @@
     -webkit-transition: all 0.35s ease 0.15s;
     -o-transition: all 0.35s ease 0.15s;
     transition: all 0.35s ease 0.15s;
+    border: none;
   }

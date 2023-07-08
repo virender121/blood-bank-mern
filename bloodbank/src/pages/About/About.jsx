@@ -41,7 +41,7 @@ const About = () => {
   return (
     <>
     <Header backgroundImage={headerPic}/>
-   <div>
+   <div className='justify-content-center'>
     <h1 className='about-header'>Mission Statement</h1>
     <p className='mission-text'>The Community Blood Bank of Northwest Pennsylvania and Western New York connects donors to patients who are in need of life-sustaining blood products in the communities we serve.</p>
    <div className='seprater'> <hr /></div>

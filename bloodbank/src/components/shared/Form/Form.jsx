@@ -108,6 +108,8 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                     name="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    autocomplete ="email"
+                    required
                   />
                   <InputType
                     labelText="Password"
@@ -116,6 +118,8 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                     name="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    autocomplete="password"
+                    required
                   />
                 </>
               );
@@ -245,14 +249,76 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                 </>
               );
             }
-            
+            //  case formType === "donor-form":{
+            //   return (
+            //     <>
+            //       <InputType
+            //         labelText="Name"
+            //         labelFor="forName"
+            //         inputType="text"
+            //         name="name"
+            //         value={name}
+            //         onChange={(e) => setName(e.target.value)}
+            //         className='donor-input '
+            //       />
+            //         <InputType
+            //         labelText="SurName"
+            //         labelFor="forSurName"
+            //         inputType="text"
+            //         name="surName"
+            //         value={surName}
+            //         onChange={(e) => setSurName(e.target.value)}
+            //         className='donor-input '
+            //       />
+            //        <InputType
+            //         labelText=" Father Name"
+            //         labelFor="forFatherName"
+            //         inputType="text"
+            //         name=" father name"
+            //         value={fatherName}
+            //         onChange={(e) => setFatherName(e.target.value)}
+            //         className='donor-input '
+            //       />
+            //         <InputType
+            //         labelText="Date of Birth"
+            //         labelFor="fordateOfBirth"
+            //         inputType="date"
+            //         name="dateOfBirth"
+            //         value={name}
+            //         onChange={(e) => setDateOfBirth(e.target.value)}
+            //         className='donor-input '
+            //       />
+            //       <div className='form-group'>
+            //        <select id="gender"
+            //        name="gender"
+            //        value={gender}
+            //        onChange={(e)=> setGender(e.target.value)}
+            //        required>
+            //          <option value="">Select Gender</option>
+            // <option value="male">Male</option>
+            // <option value="female">Female</option>
+            // <option value="other">Other</option>
+            //        </select>
+            //       </div>
+            //         <InputType
+            //         labelText="Name"
+            //         labelFor="forName"
+            //         inputType="text"
+            //         name="name"
+            //         value={name}
+            //         onChange={(e) => setName(e.target.value)}
+            //         className='donor-input '
+            //       />
+            //       </>
+            //      )
+            //  };
             default: {
               return null;
             }
           }
         })()}
 
-        <div className="d-flex flex-row justify-content-between">
+        <div className="d-flex flex-column justify-content-between">
           {formType !=='contact' ?(
             <div>
           {formType === 'login' ? (
@@ -268,9 +334,11 @@ const Form = ({ formType, submitBtn, formTitle }) => {
           )}
           </div>
           ): null}
-          <button className='btn' type="submit">
+          <div className='justify-content-center btn-div'>
+          <button className='btn-main' type="submit">
             {submitBtn}
           </button>
+          </div>
         </div>
       </form>
     </div>

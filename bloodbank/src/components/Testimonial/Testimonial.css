@@ -28,7 +28,7 @@
     top: calc(100% - 2px);
     background: #03a9f4;
     left: 0;
-    background: linear-gradient(#ec8b0c, #af1111);
+    background: linear-gradient(rgba(219,19,58,255),#ec8b0c);
     transition: 0.5s;
   }
   .testimonials .card:hover .layer {

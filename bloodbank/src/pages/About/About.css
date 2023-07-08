@@ -3,13 +3,13 @@
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
-      
+         font-size: large;
     }
 
     hr{
        
-       font-size: larger;
-       border: .2rem solid black;
+       font-size: 1.5rem;
+       border: .2rem solid rgba(219, 19, 58, 255) !important;
     }
 
     .bord-list{
@@ -29,7 +29,6 @@
 
     .director-name{
         font-size: 2rem;
-        /* font-style: italic; */
         font-family: cursive;
         display: flex;
         justify-content: end;
@@ -44,7 +43,10 @@
         margin-top: 10rem;
     }
     .mission-text{
-        font-size: 1.6rem;
+        font-size: 1.3rem;
+        justify-content: center;
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
     .member-heading{
         font-size: 1.3rem;
@@ -66,11 +68,13 @@
    }
    .about-header{
     font-size: 2.3rem;
+    font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
    }
    .abouticon{
    font-size: 2rem;
     background-color: transparent;
+    color: rgba(219, 19, 58, 255);
    }
     
    .leaders{

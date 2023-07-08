@@ -1,0 +1,32 @@
+.request-form-container{
+    max-width: 43rem;
+    padding: 4rem;
+    margin: 20px auto;
+    border: 1px solid rgba(219, 19, 58, 255);
+}
+
+.btn-request{
+    padding: 10px 20px;
+    background-color: rgba(219, 19, 58, 255);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+}
+.color-red{
+    color: rgba(219, 19, 58, 255);
+}
+
+.request-heading{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

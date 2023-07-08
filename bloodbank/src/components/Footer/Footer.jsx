@@ -6,7 +6,11 @@ import footerLogo from '../../Images/blood_logo_white-removebg-preview.png'
 const Footer = () => {
   return (
     <div className="footer">
+       {/* <div className="wave-container">
+        <div className="wave"></div>
+      </div> */}
       <div className="inner-footer">
+        
         <div className="footer-items">
          <img src ={footerLogo} alt='footer-logo' className='footer-logo'/>
           <p>Description of any product or motto of the company.</p>
