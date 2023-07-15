@@ -4,14 +4,14 @@ const userModels = require('../models/recievermodels');
 
 exports.createReciever = async (req, res) =>{
   try {
-    const formData = req.body;
+    const requestData = req.body;
     console.log(req.body);
 
     
-    const savedData = await userModels.create(formData);
+    const savedData = await userModels.create(requestData);
 
     res.status(201).send({
-      message: 'Donor data received and saved successfully',
+      message: 'Reciever data received and saved successfully',
       savedData,
     });
   } catch (error) {

@@ -96,7 +96,7 @@ export const getCurrentUser = createAsyncThunk(
 
 
 export const submitRequestForm = createAsyncThunk(
-  'auth/donor',
+  'auth/reciever',
   async (formData, { rejectWithValue, getState }) => {
     try {
       const { auth } = getState();

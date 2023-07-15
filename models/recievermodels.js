@@ -20,7 +20,7 @@ const recieverSchema = new mongoose.Schema({
     patient: {
         type : String,
         required : true
-    }
-})
+    },
+},{timestamps:true})
 
 module.exports =mongoose.model('Reciever', recieverSchema);

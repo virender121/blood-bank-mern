@@ -5,7 +5,10 @@ import headerPic from '../../Images/HomePIC.jpg';
 import './RequestBlood.css';
 import axios from 'axios';
 import Navbar from '../../components/Navbar/Navbar';
+import { useDispatch } from 'react-redux';
+import { recieverAdded } from '../../Reduxe/auth/authSlice';
 const RequestBlood = () => {
+  const dispatch = useDispatch()
     const [requestData, setRequestData] = useState({
         name:'',
         address:"",
@@ -54,8 +57,10 @@ const RequestBlood = () => {
           setRequestErrors(errors);
         } else {
           try{
-            const response = await axios.post('http://localhost:8080/api/v1/reciever', { requestData });
-            console.log(response.data); 
+            const res = await axios.post('http://localhost:8080/api/v1/blood/reciever', { requestData });
+            // console.log(response.data); 
+            const savedData = res.data.savedData;
+            dispatch(recieverAdded(savedData))
           } catch(error){
             console.log(error)
           }

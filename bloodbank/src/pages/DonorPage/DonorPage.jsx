@@ -78,7 +78,7 @@ const DonorPage = () => {
       setFormErrors(errors);
     } else {
       try{
-        const res = await axios.post('http://localhost:8080/api/v1/donor', formData);
+        const res = await axios.post('http://localhost:8080/api/v1/blood/donor', formData);
         const savedData = res.data.savedData;
            dispatch(donorAdded(savedData))
       

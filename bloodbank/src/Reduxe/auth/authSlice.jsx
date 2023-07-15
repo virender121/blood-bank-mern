@@ -1,9 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCurrentUser, userLogin, userRegister , submitDonorForm, submitRequestForm} from "./authAction";
+import { getCurrentUser, userLogin, userRegister, submitDonorForm, submitRequestForm } from "./authAction";
 
-const token = localStorage.getItem("token")
-  ? localStorage.getItem("token")
-  : null;
+const token = localStorage.getItem("token") ? localStorage.getItem("token") : null;
 
 const initialState = {
   loading: false,
@@ -12,18 +10,17 @@ const initialState = {
   error: null,
   isAuthenticated: false,
   donor: null,
-  reciever:null
-
+  reciever: null
 };
 
 const authSlice = createSlice({
   name: "auth",
   initialState: initialState,
   reducers: {
-    donorAdded: (state , action ) => {
+    donorAdded: (state, action) => {
       state.donor = action.payload;
     },
-    reciverAdded: (state,action) => {
+    recieverAdded: (state, action) => {
       state.reciever = action.payload;
     }
   },
@@ -71,30 +68,30 @@ const authSlice = createSlice({
     // new-donor
     builder.addCase(submitDonorForm.pending, (state) => {
       state.loading = true;
-      state.error =null;
-    })
-    builder.addCase(submitDonorForm.fulfilled,(state, {payload}) => {
+      state.error = null;
+    });
+    builder.addCase(submitDonorForm.fulfilled, (state, { payload }) => {
       state.loading = false;
       state.donor = payload.donor;
-    })
-    builder.addCase(submitDonorForm.rejected,(state, {payload}) => {
+    });
+    builder.addCase(submitDonorForm.rejected, (state, { payload }) => {
       state.loading = false;
       state.error = payload;
-    })
-    builder.addCase(submitRequestForm.pending, (state) =>{
+    });
+    builder.addCase(submitRequestForm.pending, (state) => {
       state.loading = true;
-      state.error=null;
-    })
-    builder.addCase(submitRequestForm.fulfilled, (state,{payload}) => {
+      state.error = null;
+    });
+    builder.addCase(submitRequestForm.fulfilled, (state, { payload }) => {
       state.loading = false;
-      state.error = payload.reciever;
-    })
-    builder.addCase(submitRequestForm.rejected, (state, {payload}) =>{
+      state.reciever = payload.reciever; 
+    });
+    builder.addCase(submitRequestForm.rejected, (state, { payload }) => {
       state.loading = false;
       state.error = payload;
-    })
+    });
   },
 });
 
-export const {donorAdded} = authSlice.actions;
+export const { donorAdded, recieverAdded } = authSlice.actions;
 export default authSlice;
