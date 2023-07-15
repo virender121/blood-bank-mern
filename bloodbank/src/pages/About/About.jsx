@@ -6,6 +6,7 @@ import headerPic from '../../Images/homeback.jpg'
 import Footer from '../../components/Footer/Footer';
 import directorpic from "../../Images/director-pic.jpg"
 import { FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
+import Navbar from '../../components/Navbar/Navbar'
 const About = () => {
   const members= [
    { 
@@ -40,6 +41,7 @@ const About = () => {
   ];
   return (
     <>
+     <Navbar />
     <Header backgroundImage={headerPic}/>
    <div className='justify-content-center'>
     <h1 className='about-header'>Mission Statement</h1>

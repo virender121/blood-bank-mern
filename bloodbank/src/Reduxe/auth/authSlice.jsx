@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCurrentUser, userLogin, userRegister } from "./authAction";
+import { getCurrentUser, userLogin, userRegister , submitDonorForm, submitRequestForm} from "./authAction";
 
 const token = localStorage.getItem("token")
   ? localStorage.getItem("token")
@@ -11,12 +11,22 @@ const initialState = {
   token,
   error: null,
   isAuthenticated: false,
+  donor: null,
+  reciever:null
+
 };
 
 const authSlice = createSlice({
   name: "auth",
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    donorAdded: (state , action ) => {
+      state.donor = action.payload;
+    },
+    reciverAdded: (state,action) => {
+      state.reciever = action.payload;
+    }
+  },
   extraReducers: (builder) => {
     // login user
     builder.addCase(userLogin.pending, (state) => {
@@ -58,7 +68,33 @@ const authSlice = createSlice({
       state.loading = false;
       state.error = payload;
     });
+    // new-donor
+    builder.addCase(submitDonorForm.pending, (state) => {
+      state.loading = true;
+      state.error =null;
+    })
+    builder.addCase(submitDonorForm.fulfilled,(state, {payload}) => {
+      state.loading = false;
+      state.donor = payload.donor;
+    })
+    builder.addCase(submitDonorForm.rejected,(state, {payload}) => {
+      state.loading = false;
+      state.error = payload;
+    })
+    builder.addCase(submitRequestForm.pending, (state) =>{
+      state.loading = true;
+      state.error=null;
+    })
+    builder.addCase(submitRequestForm.fulfilled, (state,{payload}) => {
+      state.loading = false;
+      state.error = payload.reciever;
+    })
+    builder.addCase(submitRequestForm.rejected, (state, {payload}) =>{
+      state.loading = false;
+      state.error = payload;
+    })
   },
 });
 
+export const {donorAdded} = authSlice.actions;
 export default authSlice;

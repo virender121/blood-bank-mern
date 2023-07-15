@@ -4,11 +4,14 @@ import Spinner from '../../components/shared/spinner/spinner';
 import Form from '../../components/shared/Form/Form';
 import loginBack from '../../Images/banner1.jpg';
 import Footer from '../../components/Footer/Footer';
+import Navbar from '../../components/Navbar/Navbar';
+import "./Register.css"
 
 const Login = () => {
   const { loading, error } = useSelector((state) => state.auth);
   return (
     <>
+     <Navbar />
       {error && <span>{alert(error)}</span>}
       {loading ? (
         <Spinner />
@@ -18,7 +21,7 @@ const Login = () => {
             <img src={loginBack} alt='loginImage' className="loginImage" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
           <div className='col-md-6 d-flex align-items-center justify-content-center'>
-            <div className='form-container'>
+            <div className='login-form-container'>
               <Form formTitle={'Welcome Back!! '} submitBtn={'Log In'} formType={'login'} />
             </div>
           </div>

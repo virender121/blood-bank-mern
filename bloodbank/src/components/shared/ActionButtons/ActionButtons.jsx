@@ -6,9 +6,11 @@ import "./ActionButtons.css";
 import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
 import Form from '../Form/Form';
+import MapContainer from '../../MapContainer/MapContainer';
 
 const ActionButtons = () => {
   const [show, setShow] = useState(false)
+  const [showMap, setShowMap] = useState(false)
   const handleShowForm = () => {
     setShow(true)
   }
@@ -16,10 +18,10 @@ const ActionButtons = () => {
     setShow(false)
   }
   const handleShowMap = () =>{
-    setShow(true)
+    setShowMap(true)
   }
   const handleCloseMap = () =>{
-    setShow(false)
+    setShowMap(false)
   }
   return (
     <>
@@ -28,7 +30,7 @@ const ActionButtons = () => {
         <div className="column">
           <div className="icon-wrapper">
             <span className="hover-text">Get Directions</span>
-            <FaMapMarkerAlt className="icon" />
+            <FaMapMarkerAlt className="icon" onClick={handleShowMap}/>
           </div>
           <div className="icon-wrapper">
             <span className="hover-text">Register for an Appointment</span>
@@ -48,12 +50,25 @@ const ActionButtons = () => {
         <Modal.Body><Form formType="contact" submitBtn="Contact" showAdditionalField={true} />
         </Modal.Body>
       </Modal>
-      <Modal show={show} onHide={handleCloseMap} keyboard={false} backdrop='static'>
+      <Modal show={showMap} onHide={handleCloseMap} keyboard={false} backdrop='static'>
         <Modal.Header closeButton>
-          <Modal.Title>Ask your query</Modal.Title>
+          <Modal.Title>Search nearby blood center</Modal.Title>
+          {/* <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="searchlocation"
+                placeholder="bhilai"
+                autoFocus
+              />
+            </Form.Group>
+            </Form> */}
         </Modal.Header>
-        <Modal.Body><Form formType="contact" submitBtn="Contact" showAdditionalField={true} />
+        <Modal.Body ><MapContainer style={{height:'300px'}}/>
         </Modal.Body>
+        <Modal.Footer>
+          <button type='submit'>Search</button>
+        </Modal.Footer>
       </Modal>
     </>
   );

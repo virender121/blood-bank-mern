@@ -4,11 +4,22 @@ import Header from '../../components/Header/Header';
 import headerPic from '../../Images/HomePIC.jpg';
 import './RequestBlood.css';
 import axios from 'axios';
+import Navbar from '../../components/Navbar/Navbar';
 const RequestBlood = () => {
     const [requestData, setRequestData] = useState({
         name:'',
+        address:"",
+        quantity:'',
+        bloodGroup:"",
+        patient:''
     })
-    const [requestErrors, setRequestErrors] = useState(false)
+    const [requestErrors, setRequestErrors] = useState({
+      name:false,
+      address:false,
+      quantity:false,
+      bloodGroup:false,
+      patient:false
+    })
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -43,7 +54,7 @@ const RequestBlood = () => {
           setRequestErrors(errors);
         } else {
           try{
-            const response = await axios.post('auth/reciever', { requestData });
+            const response = await axios.post('http://localhost:8080/api/v1/reciever', { requestData });
             console.log(response.data); 
           } catch(error){
             console.log(error)
@@ -52,6 +63,7 @@ const RequestBlood = () => {
       };
     return (
        <>
+        <Navbar />
        <Header backgroundImage={headerPic}/>
        <div className='request-form-container'>
         <h2 className='request-heading'>

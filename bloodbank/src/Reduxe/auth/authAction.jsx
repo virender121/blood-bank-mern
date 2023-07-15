@@ -8,7 +8,7 @@ export const userLogin = createAsyncThunk(
     try {
       const response = await API.post("/auth/login", { email, password });
       const data = response.data;
-
+  
       if (data.success) {
         toast.success(data.message);
         localStorage.setItem("token", data.token);
@@ -95,7 +95,41 @@ export const getCurrentUser = createAsyncThunk(
 
 
 
-export const donor = createAsyncThunk(
+export const submitRequestForm = createAsyncThunk(
+  'auth/donor',
+  async (formData, { rejectWithValue, getState }) => {
+    try {
+      const { auth } = getState();
+
+      if (!auth.isAuthenticated) {
+        // User is not logged in
+        toast.error('Please log in to fill the donor form');
+        return;
+      }
+
+      const response = await API.post("/auth/reciever", formData);
+      const data = response.data;
+
+      if (data.success) {
+        toast.success(data.message);
+        
+      }
+
+      return data;
+    } catch (error) {
+      console.log(error);
+
+      if (error.response && error.response.data.message) {
+        return rejectWithValue(error.response.data.message);
+      } else {
+        return rejectWithValue(error.message);
+      }
+    }
+  }
+);
+
+
+export const submitDonorForm = createAsyncThunk(
   'auth/donor',
   async (formData, { rejectWithValue, getState }) => {
     try {
@@ -112,7 +146,7 @@ export const donor = createAsyncThunk(
 
       if (data.success) {
         toast.success(data.message);
-        // Handle success action or redirect to another page
+        
       }
 
       return data;

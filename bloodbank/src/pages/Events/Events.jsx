@@ -3,6 +3,7 @@ import {Col, Container, Row } from 'react-bootstrap';
 import event1 from '../../Images/event1.jpg'
 import Footer from '../../components/Footer/Footer';
 import './Event.css'
+import Navbar from '../../components/Navbar/Navbar';
 const Events = () => {
   const [eventData, setEventData] = useState({
     date: '',
@@ -53,6 +54,7 @@ const Events = () => {
     if (eventData.organisedby === 'hospital') {
       return (
         <>
+         <Navbar />
           <div className='form-group'>
             <label htmlFor="hospitalName">Hospital Name:</label>
             <input
@@ -108,6 +110,7 @@ const Events = () => {
 
   return (
     <>
+    <Navbar/>
      <Container className='mb-3'>
       <Row className='py-5'>
         <Col xs={12} md={6}>

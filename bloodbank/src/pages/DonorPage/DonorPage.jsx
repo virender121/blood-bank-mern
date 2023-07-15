@@ -4,8 +4,12 @@ import headerPic from '../../Images/HomePIC.jpg'
 import "./DonorPage.css"
 import axios from 'axios';
 import Footer from '../../components/Footer/Footer';
+import Navbar from '../../components/Navbar/Navbar';
+import { useDispatch } from 'react-redux';
+import { donorAdded } from '../../Reduxe/auth/authSlice';
 
 const DonorPage = () => {
+  const dispatch = useDispatch()
   const [formData, setFormData] = useState({
     name: '',
     fatherName: '',
@@ -74,8 +78,10 @@ const DonorPage = () => {
       setFormErrors(errors);
     } else {
       try{
-        const response = await axios.post('auth/donor', { formData });
-        console.log(response.data); 
+        const res = await axios.post('http://localhost:8080/api/v1/donor', formData);
+        const savedData = res.data.savedData;
+           dispatch(donorAdded(savedData))
+      
       } catch(error){
         console.log(error)
       }
@@ -84,6 +90,7 @@ const DonorPage = () => {
 
   return (
    <>
+    <Navbar />
       <Header backgroundImage={headerPic}/>
 
  
@@ -145,6 +152,7 @@ const DonorPage = () => {
           {formErrors.dateOfBirth && <span className="error-message">Please enter a date of birth</span>}
         </div>
         </div>
+       
         <div className='donor-row'>
         <div className="form-group">
           <label htmlFor="gender">Gender:</label>

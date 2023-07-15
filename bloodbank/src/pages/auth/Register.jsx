@@ -5,10 +5,12 @@ import Form from '../../components/shared/Form/Form';
 import banner2 from '../../Images/banner2.jpg';
 import './Register.css';
 import Footer from '../../components/Footer/Footer';
+import Navbar from '../../components/Navbar/Navbar';
 const Register = () => {
   const { loading, error } = useSelector((state) => state.auth);
   return (
     <>
+     <Navbar />
       {error && <span>{alert(error)}</span>}
       {loading ? (
         <Spinner />

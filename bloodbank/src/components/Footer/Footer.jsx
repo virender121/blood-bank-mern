@@ -6,9 +6,7 @@ import footerLogo from '../../Images/blood_logo_white-removebg-preview.png'
 const Footer = () => {
   return (
     <div className="footer">
-       {/* <div className="wave-container">
-        <div className="wave"></div>
-      </div> */}
+      
       <div className="inner-footer">
         
         <div className="footer-items">
@@ -18,9 +16,9 @@ const Footer = () => {
         <div className="footer-items">
           <h3>Quick Links</h3>
           <div className="border1"></div>
-          <ul>
+          <ul className='footer-links'>
             <li><a href="/">Home</a></li>
-            <li><a href="#">Search</a></li>
+            <li><a href="/">Search</a></li>
             <li><a href="/contactus">Contact</a></li>
             <li><a href="/about">About</a></li>
           </ul>
@@ -28,17 +26,17 @@ const Footer = () => {
         <div className="footer-items">
           <h3>Recipes</h3>
           <div className="border1"></div>
-          <ul>
-            <li><a href="#">Become donor</a></li>
-            <li><a href="#">Events</a></li>
+          <ul className='footer-links'>
+            <li><a href="/donor">Become donor</a></li>
+            <li><a href="/event">Events</a></li>
             <li><a href="#"></a></li>
-            <li><a href="#">Italian</a></li>
+            <li><a href="#"></a></li>
           </ul>
         </div>
         <div className="footer-items ">
           <h3>Contact us</h3>
           <div className="border1 text-center"></div>
-          <ul>
+          <ul className='footer-links'>
   <li><FaMapMarkerAlt />XYZ, abc</li>
   <li><FaPhone />123456789</li>
   <li><FaEnvelope />xyz@gmail.com</li>

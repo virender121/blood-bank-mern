@@ -11,7 +11,7 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-    const Navigate = useNavigate()
+  const Navigate = useNavigate()
   const handleMenuToggle = () => {
     setShowMenu(!showMenu);
   };

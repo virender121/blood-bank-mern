@@ -45,10 +45,10 @@
     border: 1px solid rgba(219, 19, 58, 255);
     border-radius: 50%;
   }
-  .icon:hover.hover-text {
+  /* .icon:hover ~ .hover-text {
   opacity: 1;
 color:#000000;
-  }
+  } */
   
   @media sceen and(max-width: 767px){
     .icon-wrapper{

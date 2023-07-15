@@ -3,9 +3,12 @@ import Footer from '../../components/Footer/Footer'
 import MapContainer from '../../components/MapContainer/MapContainer'
 import Form from '../../components/shared/Form/Form'
 import './Contactus.css'
+import Navbar from '../../components/Navbar/Navbar'
 const Contactus = () => {
 
   return (
+    <>
+     <Navbar />
     <div>
       <div className="container">
   <div className="col-md-12">
@@ -26,6 +29,7 @@ const Contactus = () => {
 </div>
       <Footer/>
     </div>
+    </>
   )
 }
 

@@ -17,15 +17,16 @@ import DonorPage from './pages/DonorPage/DonorPage';
 import NotFound from './pages/NotFound/NotFound';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RequestBlood from './pages/RequestBlood/RequestBlood';
-import Dashboard from './Admin/Dashboard/Dashboard';
+// import Dashboard from './Admin/Dashboard/Dashboard';
 function App() {
   return (
     <div className="App">
-      <Navbar />
+  
       <ToastContainer />
       
       <Routes>
        
+       user.role === admin ? <></>
           <Route exact path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contactus" element={<Contactus />} />
@@ -39,7 +40,7 @@ function App() {
         <Route path="/requestblood" element={<PrivateRoute />}>
           <Route index element={<RequestBlood />} />
         </Route>
-        <Route path='/admin/dashboard' element={<Dashboard/>}/>
+        {/* <Route path='/admin/dashboard' element={<Dashboard/>}/> */}
         
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -34,7 +34,12 @@
     flex-direction: row;
     align-items: center;
 }
-
+/* .login-form-container{
+    width: 25rem;
+    border-radius: 8px solid transparent;
+    border: none;
+    background-color: black;
+} */
 @media (max-width:767px){
     .login-container{
         display: flex;

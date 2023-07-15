@@ -13,9 +13,10 @@
     color: #fff;
     border: none;
     border-radius: 10px;
+    margin-bottom: 2rem;
 }
 .btn-event:hover{
-    width: 28%;
+    /* width: 28%; */
     text-decoration: double;
     font-weight: 500;
 }
